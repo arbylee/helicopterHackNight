@@ -58,10 +58,8 @@ Main.prototype = {
   create: function(){
     this.game.input.maxPointers = 1;
 
+    this.scale.pageAlignHorizontally = true;
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    this.game.scale.setResizeCallback(function () {
-        this.game.scale.setResizeCallback(this.resize, this);
-    }, this);
 
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
     this.player = new Player(this);
